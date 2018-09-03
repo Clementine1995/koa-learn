@@ -122,3 +122,44 @@ app.use(main);
 
 有些场合，服务器需要重定向（redirect）访问请求。比如，用户登陆以后，将他重定向到登陆前的页面。
 ctx.response.redirect()方法可以发出一个302跳转，将用户导向另一个路由。
+
+```javascirpt
+const redirect = ctx => {
+  ctx.response.redirect('/');
+  ctx.response.body = '<a href="/">Index Page</a>';
+};
+
+app.use(route.get('/redirect', redirect));
+```
+
+## 三、中间件
+
+### 3.1 Logger 功能
+
+### 3.2 中间件的概念
+
+### 3.3 中间件栈
+
+### 3.4 异步中间件
+
+### 3.5 中间件的合成
+
+## 四、错误处理
+
+### 4.1 500 错误
+
+### 4.2 404错误
+
+### 4.3 处理错误的中间件
+
+### 4.4 error 事件的监听
+
+### 4.5 释放 error 事件
+
+## 五、Web App 的功能
+
+### 5.1 Cookies
+
+### 5.2 表单
+
+### 5.3 文件上传
